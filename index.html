@@ -1,165 +1,251 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Old Reseller</title>
+<title>Old Reseller | Coin Recharge</title>
 
 <style>
+:root{
+  --bg:#0b0f1a;
+  --card:#12182b;
+  --gold:#d4af37;
+  --soft:rgba(255,255,255,.08);
+  --text:#ffffff;
+  --muted:rgba(255,255,255,.75);
+  --green:#25D366;
+}
+
+*{box-sizing:border-box}
+
 body{
-margin:0;
-font-family: Arial, sans-serif;
-background:#f6f7fb;
-color:#222;
-direction:rtl;
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(180deg,#0b0f1a,#070a12);
+  color:var(--text);
 }
 
 .container{
-max-width:1100px;
-margin:auto;
-padding:40px 20px;
+  max-width:1100px;
+  margin:auto;
+  padding:24px 16px 60px;
 }
 
-header{
-display:flex;
-align-items:center;
-justify-content:space-between;
-flex-wrap:wrap;
+/* Header */
+.header{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:16px;
+  border-radius:18px;
+  background:rgba(18,24,43,.7);
+  border:1px solid var(--soft);
 }
 
-.logo{
-display:flex;
-align-items:center;
-gap:15px;
+.header img{
+  width:70px;
+  height:70px;
+  border-radius:16px;
+  object-fit:cover;
+  border:2px solid var(--gold);
 }
 
-.logo img{
-width:80px;
-height:80px;
-border-radius:50%;
-object-fit:cover;
+.header h1{
+  margin:0;
+  font-size:22px;
 }
 
-h1{
-margin:0;
-font-size:32px;
+.header span{
+  font-size:13px;
+  color:var(--muted);
 }
 
+/* Hero */
 .hero{
-margin-top:50px;
-text-align:center;
+  margin-top:22px;
+  padding:26px;
+  border-radius:22px;
+  background:
+    radial-gradient(800px 300px at 70% 0%, rgba(212,175,55,.25), transparent 60%),
+    rgba(18,24,43,.6);
+  border:1px solid var(--soft);
 }
 
 .hero h2{
-font-size:36px;
-margin-bottom:10px;
+  margin:0 0 10px;
+  font-size:36px;
 }
 
 .hero p{
-font-size:18px;
-color:#666;
+  max-width:600px;
+  line-height:1.8;
+  color:var(--muted);
 }
 
-.packages{
-margin-top:40px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+.badges{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+
+.badge{
+  padding:8px 12px;
+  border-radius:999px;
+  background:var(--soft);
+  font-size:13px;
+}
+
+/* Buttons */
+.buttons{
+  margin-top:20px;
+  display:grid;
+  gap:14px;
+}
+
+.btn{
+  display:block;
+  text-align:center;
+  padding:15px;
+  border-radius:14px;
+  font-size:18px;
+  font-weight:bold;
+  text-decoration:none;
+  color:white;
+}
+
+.btn-wa{
+  background:var(--green);
+}
+
+.btn-fatora{
+  background:linear-gradient(180deg,#1e3cff,#0f1f6b);
+}
+
+/* Packages */
+.section{
+  margin-top:26px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
 }
 
 .card{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,0.05);
-text-align:center;
+  background:rgba(18,24,43,.65);
+  border:1px solid var(--soft);
+  border-radius:18px;
+  padding:18px;
 }
 
 .card h3{
-margin:0 0 10px;
+  margin:0 0 6px;
 }
 
-.price{
-font-size:20px;
-font-weight:bold;
-color:#27ae60;
+.card p{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
 }
 
-.whatsapp{
-display:inline-block;
-margin-top:40px;
-padding:15px 30px;
-background:#25D366;
-color:white;
-font-size:18px;
-border-radius:10px;
-text-decoration:none;
-font-weight:bold;
+/* Trust */
+.trust{
+  margin-top:26px;
+  display:grid;
+  gap:14px;
 }
 
-footer{
-margin-top:60px;
-text-align:center;
-color:#888;
-font-size:14px;
+.note{
+  background:rgba(18,24,43,.55);
+  border:1px solid var(--soft);
+  border-radius:18px;
+  padding:16px;
+  color:var(--muted);
+  line-height:1.9;
+}
+
+/* Footer */
+.footer{
+  margin-top:30px;
+  text-align:center;
+  font-size:13px;
+  color:rgba(255,255,255,.6);
 }
 </style>
 </head>
 
 <body>
-
 <div class="container">
 
-<header>
-<div class="logo">
-<img src="profile.png" alt="Old Reseller">
-<h1>Old Reseller</h1>
-</div>
-</header>
+  <!-- HEADER -->
+  <div class="header">
+    <img src="profile.png" alt="Old Reseller">
+    <div>
+      <h1>Old Reseller</h1>
+      <span>وكيلة شحن كوينز • Recharge Agent</span>
+    </div>
+  </div>
 
-<section class="hero">
-<h2>أفضل أسعار الكوينز ⚡</h2>
-<p>تسليم سريع • ثقة • دعم دائم</p>
-</section>
+  <!-- HERO -->
+  <div class="hero">
+    <h2>خدمة شحن الكوينز باحتراف</h2>
+    <p>
+      Old Reseller متجر رقمي متخصص في <b>شحن الكوينز داخل الألعاب</b>.
+      نشتغل كـ <b>وكيلة شحن (Recharge Agent)</b> ونقوم بشحن العملات الرقمية
+      مباشرة إلى حساب العميل بعد تأكيد الطلب، بدون بيع أو تداول الحسابات.
+    </p>
 
-<section class="packages">
+    <div class="badges">
+      <div class="badge">🎮 In-Game Currency Top-Up</div>
+      <div class="badge">⚡ تسليم سريع</div>
+      <div class="badge">🛡️ تعامل آمن</div>
+      <div class="badge">💬 دعم واتساب</div>
+    </div>
 
-<div class="card">
-<h3>50,000 كوينز</h3>
-<div class="price">السعر حسب الطلب</div>
-</div>
+    <div class="buttons">
+      <a class="btn btn-fatora"
+         href="https://wa.me/212664764460?text=مرحبا، بغيت نخلص عبر فاتورة">
+        💳 الدفع عبر فاتورة (Fatora Checkout)
+      </a>
 
-<div class="card">
-<h3>100,000 كوينز</h3>
-<div class="price">السعر حسب الطلب</div>
-</div>
+      <a class="btn btn-wa"
+         href="https://wa.me/212664764460">
+        💚 اطلب عبر واتساب
+      </a>
+    </div>
+  </div>
 
-<div class="card">
-<h3>300,000 كوينز</h3>
-<div class="price">عرض مميز 🔥</div>
-</div>
+  <!-- PACKAGES -->
+  <div class="section">
+    <div class="cards">
+      <div class="card"><h3>50,000 كوينز</h3><p>السعر حسب الطلب</p></div>
+      <div class="card"><h3>100,000 كوينز</h3><p>الأكثر طلباً</p></div>
+      <div class="card"><h3>300,000 كوينز</h3><p>عرض مميز</p></div>
+      <div class="card"><h3>500,000 كوينز</h3><p>قيمة قوية</p></div>
+      <div class="card"><h3>1,000,000 كوينز</h3><p>VIP 👑</p></div>
+    </div>
+  </div>
 
-<div class="card">
-<h3>500,000 كوينز</h3>
-<div class="price">أفضل اختيار</div>
-</div>
+  <!-- TRUST -->
+  <div class="trust">
+    <div class="note">
+      🔐 <b>سياسة العمل:</b><br>
+      لا نقوم ببيع أو شراء الحسابات، الخدمة تقتصر فقط على شحن الكوينز
+      داخل الألعاب مع احترام شروط المنصات.
+    </div>
 
-<div class="card">
-<h3>1,000,000 كوينز</h3>
-<div class="price">VIP 👑</div>
-</div>
+    <div class="note">
+      💬 <b>التواصل:</b><br>
+      يتم تأكيد الطلب والتسليم عبر واتساب مباشرة:
+      <b dir="ltr">+212 664-764460</b>
+    </div>
+  </div>
 
-</section>
-
-<center>
-<a class="whatsapp" href="https://wa.me/212664764460">
-اطلب الآن عبر واتساب
-</a>
-</center>
-
-<footer>
-Old Reseller © جميع الحقوق محفوظة
-</footer>
+  <div class="footer">
+    Old Reseller © جميع الحقوق محفوظة
+  </div>
 
 </div>
 </body>
